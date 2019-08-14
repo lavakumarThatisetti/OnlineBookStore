@@ -1,0 +1,8 @@
+{
+    "/books":{
+        "target":"http://starlord.hackerearth.com",
+        "secure":false,
+        "logLevel":"debug",
+        "changeOrigin":true
+    }
+}
