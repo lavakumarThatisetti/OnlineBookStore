@@ -1,0 +1,30 @@
+Technolgies user:
+Angular 6, Jquery, Bootstrap
+
+
+Designed a basic online book store application
+
+1.Used API which mentioned with the help of angular services 
+
+2.Used MVC framework for design the app.
+
+
+
+
+Implemented functionalities:
+1.Search Bar ( By author)
+
+2.Display book grid format
+
+3.Sorting the book values using Rating in background 
+
+4.Cart functionality by getting all the book values passing backend and displaying it to console for DB reference and further operations
+
+5.Responsive design using bootstrap
+
+6.Screenshots saved in the screenshots folder
+
+
+Note:
+For proxy enable used proxyconfig file and enable cors.
+Need to update node modules when anyone run in locally
