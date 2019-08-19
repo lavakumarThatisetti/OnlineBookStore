@@ -1,22 +1,17 @@
-#card_style{
-    width: 320px;
+/* #card_style{
+    width: 100%;
     height: auto;
     max-height: 550px;
     overflow: auto;
 
-}
+} */
+
 #img{
     position: relative;
+}
 
-}
-#item{
-    margin: 1%;
-    padding: 1%;
-}
-#BooksList{
-    box-align: center;
-    margin-left: 6%;
-    margin-right: 2%;
+.col-md-3{
+    position: relative;
 }
 .card-img-top{
     height: 250px;
@@ -100,7 +95,6 @@ span.stars span {
     border: 0;
   }
   
-  
   .modal-title {
     font-weight: 300;
     font-size: 2em;
@@ -136,4 +130,11 @@ span.stars span {
 
 ::-webkit-scrollbar-thumb {
   background: darken(#f1f3f5, 20%);
+}
+
+@media only screen and (max-width: 900px){
+
+}
+@media(max-width:720px){
+
 }

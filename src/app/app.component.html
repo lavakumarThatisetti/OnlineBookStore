@@ -20,10 +20,10 @@
   </div>
 </div>
 <!--Book List-->
-
+<br/>
 <div id="BooksList" class="container">
   <div class="row">
-    <div class="col-*-*" id="item" *ngFor="let book of Booksdata|bookfilter:searchBook; index as ndx">
+    <div class="col-md-3 col-sm-6" id="item" *ngFor="let book of Booksdata|bookfilter:searchBook; index as ndx">
       <div class="card" id="card_style">
         <img class="card-img-top" src="../assets/images/harry_potter.jpg" alt="book image">
         <!-- <div class="card-img-top" id="bookimage"></div> -->
@@ -100,7 +100,7 @@
         
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-block" (click)="AddtoCart(book_item)">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          <button type="button" class="btn btn-block" data-dismiss="modal" (click)="AddtoCart(book_item)">Add Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
           <button type="button" class="btn btn-success" (click)="BuyNow(book_item)">Buy Now <i class="fa fa-play" aria-hidden="true"></i></button>
         </div>
         

@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
-import { BarRatingModule } from "ngx-bar-rating";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {BooksFilterPipe} from '../app/filters/books-filter.pipe';
 
 @NgModule({
@@ -17,9 +18,9 @@ import {BooksFilterPipe} from '../app/filters/books-filter.pipe';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
-    BarRatingModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

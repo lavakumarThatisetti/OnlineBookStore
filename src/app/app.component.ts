@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,NgZone} from '@angular/core';
 import {BooksService } from '../app/service/books.service';
 import { Books } from '../models/Books';
-
+import {CartService} from './cartservice';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   BooksOnCart: Array<Books> = [];
   book_item: Books;
   checkRating:Boolean;
-  constructor(private booksService:BooksService){
+  constructor(private booksService:BooksService, private cartservice:CartService,private zone:NgZone){
     this.checkRating=false
   }
 
@@ -26,14 +26,19 @@ export class AppComponent implements OnInit {
     });
   }
   AddtoCart(book){
-    console.log(book)
-    console.log("Your book ordered")
-    console.log(book.title)
-    console.log(book.authors)
-    console.log(book.isbn)
-    console.log(book.average_rating)
-    console.log(book.price)
-    this.BooksOnCart.push(book)
+    if(!this.BooksOnCart.some(books => books.bookID === book.bookID)){
+      console.log("Added in card")
+      console.log(book.bookID)
+      console.log(book.title)
+      console.log(book.authors)
+      console.log(book.isbn)
+      console.log(book.average_rating)
+      console.log(book.price)
+      this.BooksOnCart.push(book)
+      this.cartservice.adding()
+    }else{
+      this.cartservice.alreadyadd()
+    }
   }
   BuyNow(book){
     console.log(book)
@@ -53,6 +58,8 @@ export class AppComponent implements OnInit {
   open(book){
     // this.book_item.title=book.title.slice(0,book.title.indexOf("("));
     this.book_item = book;
+    this.book_item.title=this.book_item.title.slice(0,this.book_item.title.indexOf("("));
     this.checkRating=true;
+    
   }
 }
