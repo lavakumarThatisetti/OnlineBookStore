@@ -1,20 +1,24 @@
 import { Component, OnInit ,NgZone} from '@angular/core';
-import {BooksService } from '../app/service/books.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Books } from '../models/Books';
-import {CartService} from './cartservice';
+import {BooksService } from '../../app/service/books.service';
+import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
+import { Books } from '../../models/Books';
+import {CartService} from '../cartservice';
+import { AppConstants } from '../../models/AppConstants';
+import { CheckinService } from '../service/checkin.service';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-list-books',
+  templateUrl: './list-books.component.html',
+  styleUrls: ['./list-books.component.css']
 })
-export class AppComponent implements OnInit {
+export class ListBooksComponent implements OnInit {
+
   title = 'BookStore';
   Booksdata:Books[];
   BooksOnCart: Array<Books> = [];
   book_item: Books;
   checkRating:Boolean;
-  constructor(private booksService:BooksService,private cartservice:CartService,private router: Router,private route: ActivatedRoute){
+  constructor(private booksService:BooksService,private checkinservice:CheckinService,private cartservice:CartService,private router: Router,private route: ActivatedRoute){
     this.checkRating=false
   }
 
@@ -51,11 +55,21 @@ export class AppComponent implements OnInit {
     console.log(book.price)
   }
   viewCart(){
-    this.BooksOnCart.forEach(Book => {
-      console.log(Book);
-      console.log(Book.title);
-    });
+    // this.BooksOnCart.forEach(Book => {
+    //   console.log(Book);
+    //   console.log(Book.title);
+    // });
+    
+    // let navigationExtras: NavigationExtras = {
+    //   queryParams: this.BooksOnCart, //{ 'session_id': this.BooksOnCart },
+    //   fragment: 'anchor'
+    // };
+   // this.cartservice.bookSubject.next(this.BooksOnCart);
+    this.checkinservice.checkBooks.next(this.BooksOnCart);
     this.router.navigate(['/cart']);
+
+    
+    //AppConstants.bookSubject.next(this.BooksOnCart);
   }
   open(book){
     // this.book_item.title=book.title.slice(0,book.title.indexOf("("));
@@ -64,4 +78,5 @@ export class AppComponent implements OnInit {
     this.checkRating=true;
     
   }
+
 }

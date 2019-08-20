@@ -1,0 +1,140 @@
+/* #card_style{
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    overflow: auto;
+
+} */
+
+#img{
+    position: relative;
+}
+
+.col-md-3{
+    position: relative;
+}
+.card-img-top{
+    height: 250px;
+}
+
+span.stars, span.stars span {
+    display: flex;
+    background: url('https://apppresser.com/wp-content/uploads/2015/11/stars.png') 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}
+.card-title{
+    color: #0d7cc9!important;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#description span{
+    color: #777;
+}
+
+#price{
+    color: maroon;
+    font-size: 30px;
+}
+#rupee{
+    color: maroon;
+    font-size: 24px;
+}
+
+.span4 img {
+    margin-right: 10px;
+    height:300px;
+}
+.span4 .img-left {
+    float: left;
+}
+.span4 .img-right {
+    float: right;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+  }
+  
+  .modal-dialog {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 0px solid #3c7dcf;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .modal-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 5px;
+    background: #6598d9;
+    border: 0;
+  }
+  
+  .modal-title {
+    font-weight: 300;
+    font-size: 2em;
+    color: #fff;
+    line-height: 30px;
+  }
+  
+  .modal-body {
+    position: absolute;
+    top: 50px;
+    bottom: 60px;
+    width: 100%;
+    font-weight: 300;
+    overflow: auto;
+  }
+  
+  .modal-footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    padding: 10px;
+    background: #f1f3f5;
+  }
+  
+  ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  background: #f1f3f5;
+  border-left: 1px solid darken(#f1f3f5, 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: darken(#f1f3f5, 20%);
+}
+
+@media only screen and (max-width: 900px){
+
+}
+@media(max-width:720px){
+
+}
