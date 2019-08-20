@@ -3,7 +3,6 @@ import {BooksService } from '../../app/service/books.service';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { Books } from '../../models/Books';
 import {CartService} from '../cartservice';
-import { AppConstants } from '../../models/AppConstants';
 import { CheckinService } from '../service/checkin.service';
 
 @Component({
