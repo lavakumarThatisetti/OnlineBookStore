@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppConstants } from '../../models/AppConstants';
 import { CartService } from '../cartservice';
 import { CheckinService } from '../service/checkin.service';
 
